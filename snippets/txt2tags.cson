@@ -45,10 +45,10 @@
     prefix: 'outfile'
     body: '%%outfile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
   'Post-Processing':
-    prefix: 'filter'
+    prefix: 'postproc'
     body: '\n%!postproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n$0'
   'Pre-Processing':
-    prefix: 'filter'
+    prefix: 'preproc'
     body: '\n%!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n$0'
   Quote:
     prefix: '>'
