@@ -1,3 +1,4 @@
 '.source.txt2tags':
   editor:
     commentStart: '% '
+    softTabs: false  # blockquote markup uses tabs
