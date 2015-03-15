@@ -1,4 +1,4 @@
-".text.txt2tags":
+".source.txt2tags":
   "Current Date":
     prefix: "date"
     body: "%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)"
