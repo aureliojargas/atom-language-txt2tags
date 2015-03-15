@@ -1,4 +1,7 @@
 '.source.txt2tags':
+  'Code Block':
+    prefix: 'code'
+    body: '\n```\n${1:- insert code here -}\n```\n'
   'Current Date':
     prefix: 'date'
     body: '%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
@@ -62,6 +65,3 @@
   Title:
     prefix: '='
     body: '= ${1:My Title} =${2:[${3:optional-anchor}]}'
-  'Verbatim Block (Code)':
-    prefix: '`'
-    body: '\n```\n${1:- insert code here -}\n```\n'
