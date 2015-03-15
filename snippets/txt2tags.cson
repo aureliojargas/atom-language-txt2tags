@@ -6,21 +6,8 @@
     prefix: 'encoding'
     body: '\n%!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}\n'
   Image:
-    prefix: '['
-    body: '''
-      [${1:`#!/usr/bin/env ruby18
-      
-      def make_link(text)
-        case text
-        when %r{\A(?i)(.*\.(png|jpe?g|gif|eps|bmp))\z:     "#{$1}"
-        else "Picture.jpg"
-        end
-      end
-      
-      text = %x{__CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbpaste}.strip
-      print make_link(text)
-      `}}]
-    '''
+    prefix: 'img'
+    body: '[${1:image.png}]'
   'Include Config':
     prefix: 'include'
     body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n'
@@ -40,30 +27,8 @@
     prefix: 'infile'
     body: '%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
   Link:
-    prefix: '['
-    body: '''
-      [${1:Site Name} ${2:`#!/usr/bin/env ruby18
-      
-      def entity_escape(text)
-        # no need to escape, txt2tags already does it
-        return text
-      end
-      
-      def make_link(text)
-        case text
-        when %r{\A(mailto:)?(.*?@.*\..*)\z}:        "mailto:#{$2}"
-        when %r{\A[a-zA-Z][a-zA-Z0-9.+-]*://.*\z}:  entity_escape(text)
-        when %r{\A.*\.(com|uk|net|org|info)\z}:     "http://#{entity_escape text}"
-        when %r{\A\S+\z}:                           entity_escape(text)
-        else                                        "http://example.com/"
-        end
-      end
-      
-      text = %x{__CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbpaste}.strip
-      print make_link(text)
-      
-      `}]
-    '''
+    prefix: 'link'
+    body: '[${1:http://example.com} ${2:label}]'
   'Modification Time':
     prefix: 'mtime'
     body: '%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
