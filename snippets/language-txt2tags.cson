@@ -1,0 +1,145 @@
+".text.txt2tags":
+  "Current Date":
+    prefix: "date"
+    body: "%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)"
+  Encoding:
+    prefix: "encoding"
+    body: '''
+      %!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}
+      
+    '''
+  Image:
+    prefix: "["
+    body: '''
+      [${1:`#!/usr/bin/env ruby18
+      
+      def make_link(text)
+        case text
+        when %r{\A(?i)(.*\.(png|jpe?g|gif|eps|bmp))\z:     "#{$1}"
+        else "Picture.jpg"
+        end
+      end
+      
+      text = %x{__CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbpaste}.strip
+      print make_link(text)
+      `}}]
+    '''
+  "Include Config":
+    prefix: "include"
+    body: '''
+      %!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}
+      
+    '''
+  "Include as Raw":
+    prefix: "include"
+    body: '''
+      %!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ""${2:file}""
+      
+    '''
+  "Include as Tagged":
+    prefix: "include"
+    body: '''
+      %!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ''${2:file}''
+      
+    '''
+  "Include as Txt2tags":
+    prefix: "include"
+    body: '''
+      %!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}
+      
+    '''
+  "Include as Verbatim":
+    prefix: "include"
+    body: '''
+      %!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``
+      
+    '''
+  "Input File":
+    prefix: "infile"
+    body: "%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)"
+  Link:
+    prefix: "["
+    body: '''
+      [${1:Site Name} ${2:`#!/usr/bin/env ruby18
+      
+      def entity_escape(text)
+        # no need to escape, txt2tags already does it
+        return text
+      end
+      
+      def make_link(text)
+        case text
+        when %r{\A(mailto:)?(.*?@.*\..*)\z}:        "mailto:#{$2}"
+        when %r{\A[a-zA-Z][a-zA-Z0-9.+-]*://.*\z}:  entity_escape(text)
+        when %r{\A.*\.(com|uk|net|org|info)\z}:     "http://#{entity_escape text}"
+        when %r{\A\S+\z}:                           entity_escape(text)
+        else                                        "http://example.com/"
+        end
+      end
+      
+      text = %x{__CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbpaste}.strip
+      print make_link(text)
+      
+      `}]
+    '''
+  "Modification Time":
+    prefix: "mtime"
+    body: "%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)"
+  "Numbered Title":
+    prefix: "+"
+    body: "+ ${1:My Title} +${2:[${3:optional-anchor}]}"
+  Options:
+    prefix: "options"
+    body: '''
+      %!options(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:--no-headers | --enum-title | --toc | --toc-level n | --css-sugar | --css-inside | --mask-email | --config-file file | --outfile file}
+      
+    '''
+  "Output File":
+    prefix: "outfile"
+    body: "%%outfile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)"
+  "Post-Processing":
+    prefix: "filter"
+    body: '''
+      %!postproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}" 
+      
+    '''
+  "Pre-Processing":
+    prefix: "filter"
+    body: '''
+      %!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}" 
+      
+    '''
+  Quote:
+    prefix: ">"
+    body: "\t${1:- insert quote here -}"
+  Style:
+    prefix: "style"
+    body: '''
+      %!style(${1:html | xhtml | tex}): ${2:style.css}
+      
+    '''
+  "Table Of Contents":
+    prefix: "toc"
+    body: '''
+      
+      %%toc
+      
+    '''
+  Target:
+    prefix: "target"
+    body: '''
+      %!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}
+      
+    '''
+  Title:
+    prefix: "="
+    body: "= ${1:My Title} =${2:[${3:optional-anchor}]}"
+  "Verbatim Block (Code)":
+    prefix: "`"
+    body: '''
+      
+      \`\`\`
+      ${1:- insert code here -}
+      \`\`\`
+      
+    '''
