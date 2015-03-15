@@ -12,7 +12,7 @@
     prefix: 'img'
     body: '[${1:image.png}]$0'
   'Include Config':
-    prefix: 'include'
+    prefix: 'includeconf'
     body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n$0'
   'Include as Raw':
     prefix: 'include'
