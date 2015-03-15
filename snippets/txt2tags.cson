@@ -14,18 +14,18 @@
   'Include Config':
     prefix: 'includeconf'
     body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n$0'
+  'Include as Code':
+    prefix: 'includecode'
+    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``\n$0'
   'Include as Raw':
-    prefix: 'include'
+    prefix: 'includeraw'
     body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ""${2:file}""\n$0'
   'Include as Tagged':
-    prefix: 'include'
+    prefix: 'includetag'
     body: "\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ''${2:file}''\n$0"
   'Include as Txt2tags':
     prefix: 'include'
     body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n$0'
-  'Include as Verbatim':
-    prefix: 'include'
-    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``\n$0'
   'Input File':
     prefix: 'infile'
     body: '%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
