@@ -1,4 +1,7 @@
 '.source.txt2tags':
+  'Bold text':
+    prefix: 'b'
+    body: '**$1**$0'
   'Code Block':
     prefix: 'code'
     body: '\n```\n${1:- insert code here -}\n```\n'
@@ -29,6 +32,9 @@
   'Input File':
     prefix: 'infile'
     body: '%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
+  'Italic text':
+    prefix: 'i'
+    body: '//$1//$0'
   Link:
     prefix: 'link'
     body: '[${1:http://example.com} ${2:label}]$0'
@@ -65,3 +71,6 @@
   Title:
     prefix: '='
     body: '= ${1:My Title} =${2:[${3:optional-anchor}]}$0'
+  'Underlined text':
+    prefix: 'u'
+    body: '__$1__$0'
