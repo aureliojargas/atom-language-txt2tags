@@ -56,7 +56,7 @@
   Style:
     prefix: 'style'
     body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n$0'
-  'Table Of Contents':
+  'Table of Contents':
     prefix: 'toc'
     body: '\n\n%%toc\n\n'
   Target:
