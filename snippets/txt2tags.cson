@@ -7,61 +7,61 @@
     body: '%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
   Encoding:
     prefix: 'encoding'
-    body: '\n%!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}\n'
+    body: '\n%!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}\n$0'
   Image:
     prefix: 'img'
-    body: '[${1:image.png}]'
+    body: '[${1:image.png}]$0'
   'Include Config':
     prefix: 'include'
-    body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n'
+    body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n$0'
   'Include as Raw':
     prefix: 'include'
-    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ""${2:file}""\n'
+    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ""${2:file}""\n$0'
   'Include as Tagged':
     prefix: 'include'
-    body: "\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ''${2:file}''\n"
+    body: "\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ''${2:file}''\n$0"
   'Include as Txt2tags':
     prefix: 'include'
-    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n'
+    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n$0'
   'Include as Verbatim':
     prefix: 'include'
-    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``\n'
+    body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``\n$0'
   'Input File':
     prefix: 'infile'
     body: '%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
   Link:
     prefix: 'link'
-    body: '[${1:http://example.com} ${2:label}]'
+    body: '[${1:http://example.com} ${2:label}]$0'
   'Modification Time':
     prefix: 'mtime'
     body: '%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
   'Numbered Title':
     prefix: '+'
-    body: '+ ${1:My Title} +${2:[${3:optional-anchor}]}'
+    body: '+ ${1:My Title} +${2:[${3:optional-anchor}]}$0'
   Options:
     prefix: 'options'
-    body: '\n%!options(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:--no-headers | --enum-title | --toc | --toc-level n | --css-sugar | --css-inside | --mask-email | --config-file file | --outfile file}\n'
+    body: '\n%!options(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:--no-headers | --enum-title | --toc | --toc-level n | --css-sugar | --css-inside | --mask-email | --config-file file | --outfile file}\n$0'
   'Output File':
     prefix: 'outfile'
     body: '%%outfile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
   'Post-Processing':
     prefix: 'filter'
-    body: '\n%!postproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n'
+    body: '\n%!postproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n$0'
   'Pre-Processing':
     prefix: 'filter'
-    body: '\n%!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n'
+    body: '\n%!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n$0'
   Quote:
     prefix: '>'
     body: '\t${1:- insert quote here -}'
   Style:
     prefix: 'style'
-    body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n'
+    body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n$0'
   'Table Of Contents':
     prefix: 'toc'
     body: '\n\n%%toc\n\n'
   Target:
     prefix: 'target'
-    body: '\n%!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}\n'
+    body: '\n%!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}\n$0'
   Title:
     prefix: '='
-    body: '= ${1:My Title} =${2:[${3:optional-anchor}]}'
+    body: '= ${1:My Title} =${2:[${3:optional-anchor}]}$0'
