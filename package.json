@@ -1,12 +1,11 @@
 {
   "name": "language-txt2tags",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Syntax highlighting and snippets for txt2tags files.",
   "repository": "https://github.com/aureliojargas/atom-language-txt2tags",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
