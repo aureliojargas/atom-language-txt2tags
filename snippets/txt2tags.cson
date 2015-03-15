@@ -8,10 +8,10 @@
   'Current Date':
     prefix: 'date'
     body: '%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
-  Encoding:
+  'Encoding':
     prefix: 'encoding'
     body: '\n%!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}\n$0'
-  Image:
+  'Image':
     prefix: 'img'
     body: '[${1:image.png}]$0'
   'Include Config':
@@ -35,7 +35,7 @@
   'Italic text':
     prefix: 'i'
     body: '//$1//$0'
-  Link:
+  'Link':
     prefix: 'link'
     body: '[${1:http://example.com} ${2:label}]$0'
   'Modification Time':
@@ -44,7 +44,7 @@
   'Numbered Title':
     prefix: '+'
     body: '+ ${1:My Title} +${2:[${3:optional-anchor}]}$0'
-  Options:
+  'Options':
     prefix: 'options'
     body: '\n%!options(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:--no-headers | --enum-title | --toc | --toc-level n | --css-sugar | --css-inside | --mask-email | --config-file file | --outfile file}\n$0'
   'Output File':
@@ -56,13 +56,13 @@
   'Pre-Processing':
     prefix: 'preproc'
     body: '\n%!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n$0'
-  Quote:
+  'Quote':
     prefix: '>'
     body: '\t${1:- insert quote here -}'
   'Raw Block':
     prefix: 'raw'
     body: '\n"""\n${1:- insert raw text here -}\n"""\n'
-  Style:
+  'Style':
     prefix: 'style'
     body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n$0'
   'Table of Contents':
@@ -71,10 +71,10 @@
   'Tagged Block':
     prefix: 'tagged'
     body: "\n'''\n${1:- insert tagged text here -}\n'''\n"
-  Target:
+  'Target':
     prefix: 'target'
     body: '\n%!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}\n$0'
-  Title:
+  'Title':
     prefix: '='
     body: '= ${1:My Title} =${2:[${3:optional-anchor}]}$0'
   'Underlined text':
