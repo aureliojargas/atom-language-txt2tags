@@ -65,6 +65,9 @@
   'Style':
     prefix: 'style'
     body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n$0'
+  'Table':
+    prefix: 'table'
+    body: '\n|| heading 1 | heading 2 | heading 3 |\n | left      |   center  |     right |\n'
   'Table of Contents':
     prefix: 'toc'
     body: '\n\n%%toc\n\n'
