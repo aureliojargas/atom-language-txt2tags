@@ -59,12 +59,18 @@
   Quote:
     prefix: '>'
     body: '\t${1:- insert quote here -}'
+  'Raw Block':
+    prefix: 'raw'
+    body: '\n"""\n${1:- insert raw text here -}\n"""\n'
   Style:
     prefix: 'style'
     body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n$0'
   'Table of Contents':
     prefix: 'toc'
     body: '\n\n%%toc\n\n'
+  'Tagged Block':
+    prefix: 'tagged'
+    body: "\n'''\n${1:- insert tagged text here -}\n'''\n"
   Target:
     prefix: 'target'
     body: '\n%!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}\n$0'
