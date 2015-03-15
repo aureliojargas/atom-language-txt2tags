@@ -1,12 +1,12 @@
-".source.txt2tags":
-  "Current Date":
-    prefix: "date"
-    body: "%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)"
+'.source.txt2tags':
+  'Current Date':
+    prefix: 'date'
+    body: '%%date(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
   Encoding:
-    prefix: "encoding"
+    prefix: 'encoding'
     body: '\n%!encoding(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:utf-8}\n'
   Image:
-    prefix: "["
+    prefix: '['
     body: '''
       [${1:`#!/usr/bin/env ruby18
       
@@ -21,26 +21,26 @@
       print make_link(text)
       `}}]
     '''
-  "Include Config":
-    prefix: "include"
+  'Include Config':
+    prefix: 'include'
     body: '\n%!includeconf(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n'
-  "Include as Raw":
-    prefix: "include"
+  'Include as Raw':
+    prefix: 'include'
     body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ""${2:file}""\n'
-  "Include as Tagged":
-    prefix: "include"
+  'Include as Tagged':
+    prefix: 'include'
     body: "\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ''${2:file}''\n"
-  "Include as Txt2tags":
-    prefix: "include"
+  'Include as Txt2tags':
+    prefix: 'include'
     body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:file.t2t}\n'
-  "Include as Verbatim":
-    prefix: "include"
+  'Include as Verbatim':
+    prefix: 'include'
     body: '\n%!include(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ``${2:file.txt}``\n'
-  "Input File":
-    prefix: "infile"
-    body: "%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)"
+  'Input File':
+    prefix: 'infile'
+    body: '%%infile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
   Link:
-    prefix: "["
+    prefix: '['
     body: '''
       [${1:Site Name} ${2:`#!/usr/bin/env ruby18
       
@@ -64,39 +64,39 @@
       
       `}]
     '''
-  "Modification Time":
-    prefix: "mtime"
-    body: "%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)"
-  "Numbered Title":
-    prefix: "+"
-    body: "+ ${1:My Title} +${2:[${3:optional-anchor}]}"
+  'Modification Time':
+    prefix: 'mtime'
+    body: '%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
+  'Numbered Title':
+    prefix: '+'
+    body: '+ ${1:My Title} +${2:[${3:optional-anchor}]}'
   Options:
-    prefix: "options"
+    prefix: 'options'
     body: '\n%!options(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): ${2:--no-headers | --enum-title | --toc | --toc-level n | --css-sugar | --css-inside | --mask-email | --config-file file | --outfile file}\n'
-  "Output File":
-    prefix: "outfile"
-    body: "%%outfile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)"
-  "Post-Processing":
-    prefix: "filter"
+  'Output File':
+    prefix: 'outfile'
+    body: '%%outfile(file:%f extension:%e dir:%d path:%p file-without-extension:%F parent-dir:%D)'
+  'Post-Processing':
+    prefix: 'filter'
     body: '\n%!postproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n'
-  "Pre-Processing":
-    prefix: "filter"
+  'Pre-Processing':
+    prefix: 'filter'
     body: '\n%!preproc(${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}): "${2:pattern}" "${3:replacement}"\n'
   Quote:
-    prefix: ">"
-    body: "\t${1:- insert quote here -}"
+    prefix: '>'
+    body: '\t${1:- insert quote here -}'
   Style:
-    prefix: "style"
+    prefix: 'style'
     body: '\n%!style(${1:html | xhtml | tex}): ${2:style.css}\n'
-  "Table Of Contents":
-    prefix: "toc"
+  'Table Of Contents':
+    prefix: 'toc'
     body: '\n\n%%toc\n\n'
   Target:
-    prefix: "target"
+    prefix: 'target'
     body: '\n%!target: ${1:html | xhtml | sgml | tex | lout | man | mgp | wiki | gwiki | doku | moin | pm6 | txt}\n'
   Title:
-    prefix: "="
-    body: "= ${1:My Title} =${2:[${3:optional-anchor}]}"
-  "Verbatim Block (Code)":
-    prefix: "`"
+    prefix: '='
+    body: '= ${1:My Title} =${2:[${3:optional-anchor}]}'
+  'Verbatim Block (Code)':
+    prefix: '`'
     body: '\n```\n${1:- insert code here -}\n```\n'
