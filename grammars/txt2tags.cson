@@ -1,7 +1,12 @@
+# Tip: Follow good practices from:
+# https://github.com/atom/language-gfm/blob/master/grammars/gfm.cson
+# https://github.com/asciidoctor/atom-language-asciidoc/blob/master/grammars/asciidoc.cson
+
+name: "Txt2tags"
+scopeName: "text.txt2tags"
 fileTypes: [
   "t2t"
 ]
-name: "Txt2tags"
 patterns: [
   {
     begin: "^%%%\\s*$"
@@ -160,4 +165,3 @@ patterns: [
     name: "comment.line.txt2tags"
   }
 ]
-scopeName: "text.txt2tags"
