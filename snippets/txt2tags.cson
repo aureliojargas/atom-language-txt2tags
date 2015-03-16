@@ -37,7 +37,7 @@
     body: '//$1//$0'
   'Link':
     prefix: 'link'
-    body: '[${1:http://example.com} ${2:label}]$0'
+    body: '[${1:label} ${2:http://example.com}]$0'
   'Modification Time':
     prefix: 'mtime'
     body: '%%mtime(year:%Y month:%m day:%d hour:%H min:%M sec:%S date:%c weekday:%A %a month-name:%B %b)'
