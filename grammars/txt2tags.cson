@@ -215,8 +215,17 @@ patterns: [
   #   [label url]
   #   [[image.png] url]
   {
-    match: '(?i)\\[(\\[[\\w_,.+%$#@!?+~/-]+\\.(png|jpe?g|gif|eps|bmp)\\]|[^]]+) (((https?|ftp|news|telnet|gopher|wais)://([A-Za-z0-9_.-]+(:[^ @]*)?@)?|(www[23]?|ftp)\\.)[A-Za-z0-9%._/~:,=$@&+-]+\\b/*(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?(#[A-Za-z0-9%._-]*)?|[A-Za-z0-9_.-]+@([A-Za-z0-9_-]+\\.)+[A-Za-z]{2,4}\\b(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?|[A-Za-z0-9%._/~:,=$@&+-]+|[A-Za-z0-9%._/~:,=$@&+-]*(#[A-Za-z0-9%._-]*))\\]'
-    name: 'markup.underline.link.http.hyperlink'
+    match: '(?i)(\\[)(\\[[\\w_,.+%$#@!?+~/-]+\\.(png|jpe?g|gif|eps|bmp)\\]|[^]]+) (((https?|ftp|news|telnet|gopher|wais)://([A-Za-z0-9_.-]+(:[^ @]*)?@)?|(www[23]?|ftp)\\.)[A-Za-z0-9%._/~:,=$@&+-]+\\b/*(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?(#[A-Za-z0-9%._-]*)?|[A-Za-z0-9_.-]+@([A-Za-z0-9_-]+\\.)+[A-Za-z]{2,4}\\b(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?|[A-Za-z0-9%._/~:,=$@&+-]+|[A-Za-z0-9%._/~:,=$@&+-]*(#[A-Za-z0-9%._-]*))(\\])'
+    name: 'link'
+    captures:
+      '1':
+        name: 'punctuation.definition.begin.txt2tags'
+      '2':
+        name: 'entity.txt2tags'
+      '4':
+        name: 'markup.underline.link.txt2tags'
+      '15':
+        name: 'punctuation.definition.end.txt2tags'
   }
 
   # Blockquote
