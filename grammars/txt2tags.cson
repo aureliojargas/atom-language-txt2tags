@@ -2,8 +2,15 @@
 # https://github.com/atom/language-gfm/blob/master/grammars/gfm.cson
 # https://github.com/asciidoctor/atom-language-asciidoc/blob/master/grammars/asciidoc.cson
 
+# I'm borrowing the scope from GFM because themes have their styles hardcoded to it :/
+# https://github.com/atom/atom-dark-syntax/blob/master/index.less#L47
+# https://github.com/atom/one-dark-syntax/blob/master/styles/language.less#L244
+# https://github.com/atom/solarized-dark-syntax/blob/master/styles/markdown.less
+# https://github.com/kevinsawicki/monokai/blob/master/index.less#L52
+# https://github.com/danielgtaylor/atom-monokai-extended/blob/master/index.less#L181
+scopeName: 'source.gfm.txt2tags'
+
 name: 'Txt2tags'
-scopeName: 'source.gfm source.txt2tags'
 fileTypes: [
   't2t'
 ]
