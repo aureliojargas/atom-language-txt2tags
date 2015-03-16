@@ -1,4 +1,5 @@
 # Tip: Follow good practices from:
+# http://manual.macromates.com/en/language_grammars.html
 # https://github.com/atom/language-gfm/blob/master/grammars/gfm.cson
 # https://github.com/asciidoctor/atom-language-asciidoc/blob/master/grammars/asciidoc.cson
 
