@@ -12,13 +12,13 @@ patterns: [
   # Comment blocks
   {
     begin: '^%%%\\s*$'
-    end: '^%%%\\s*$\\n?'
+    end: '^%%%\\s*$'
     name: 'comment.block.txt2tags'
   }
 
   # Horizontal line
   {
-    match: '^\\s*[_=-]{20,}\\s*$\\n?'
+    match: '^\\s*[_=-]{20,}\\s*$'
     name: 'comment.hr.txt2tags'
   }
 
@@ -36,23 +36,23 @@ patterns: [
   #   == foo ==
   #   == foo ==[anchor]
   {
-    match: '^\\s*={1}[^=](|.*[^=])={1}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*={1}[^=](|.*[^=])={1}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-1.txt2tags'
   }
   {
-    match: '^\\s*={2}[^=](|.*[^=])={2}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*={2}[^=](|.*[^=])={2}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-2.txt2tags'
   }
   {
-    match: '^\\s*={3}[^=](|.*[^=])={3}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*={3}[^=](|.*[^=])={3}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-3.txt2tags'
   }
   {
-    match: '^\\s*={4}[^=](|.*[^=])={4}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*={4}[^=](|.*[^=])={4}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-4.txt2tags'
   }
   {
-    match: '^\\s*={5}[^=](|.*[^=])={5}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*={5}[^=](|.*[^=])={5}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-5.txt2tags'
   }
 
@@ -60,23 +60,23 @@ patterns: [
   #   ++ foo ++
   #   ++ foo ++[anchor]
   {
-    match: '^\\s*\\+{1}[^+](|.*[^+])\\+{1}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*\\+{1}[^+](|.*[^+])\\+{1}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-1.txt2tags'
   }
   {
-    match: '^\\s*\\+{2}[^+](|.*[^+])\\+{2}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*\\+{2}[^+](|.*[^+])\\+{2}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-2.txt2tags'
   }
   {
-    match: '^\\s*\\+{3}[^+](|.*[^+])\\+{3}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*\\+{3}[^+](|.*[^+])\\+{3}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-3.txt2tags'
   }
   {
-    match: '^\\s*\\+{4}[^+](|.*[^+])\\+{4}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*\\+{4}[^+](|.*[^+])\\+{4}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-4.txt2tags'
   }
   {
-    match: '^\\s*\\+{5}[^+](|.*[^+])\\+{5}(\\[[\\w-]*\\])?\\s*$\\n?'
+    match: '^\\s*\\+{5}[^+](|.*[^+])\\+{5}(\\[[\\w-]*\\])?\\s*$'
     name: 'markup.heading.heading-5.txt2tags'
   }
 
@@ -96,12 +96,12 @@ patterns: [
     name: 'string.quoted.raw.inline.txt2tags'
   }
   {
-    match: '^""" (?=.).*$\\n?'
+    match: '^""" (?=.).*$'
     name: 'string.quoted.raw.block.txt2tags'
   }
   {
     begin: '^"""\\s*$'
-    end: '^"""\\s*$\\n?'
+    end: '^"""\\s*$'
     name: 'string.quoted.raw.block.txt2tags'
   }
 
@@ -111,12 +111,12 @@ patterns: [
     name: 'string.quoted.tagged.inline.txt2tags'
   }
   {
-    match: "^''' (?=.).*$\\n?"
+    match: "^''' (?=.).*$"
     name: 'string.quoted.tagged.block.txt2tags'
   }
   {
     begin: "^'''\\s*$"
-    end: "^'''\\s*$\\n?"
+    end: "^'''\\s*$"
     name: 'string.quoted.tagged.block.txt2tags'
   }
 
@@ -155,11 +155,11 @@ patterns: [
   # Code (block and inline)
   {
     begin: '^```\\s*$'
-    end: '^```\\s*$\\n?'
+    end: '^```\\s*$'
     name: 'markup.raw.code.block.txt2tags'
   }
   {
-    match: '^``` (?=.).*$\\n?'
+    match: '^``` (?=.).*$'
     name: 'markup.raw.code.block.txt2tags'
   }
   {
@@ -230,13 +230,13 @@ patterns: [
 
   # Blockquote
   {
-    match: '^\\t.*$\\n?'
+    match: '^\\t.*$'
     name: 'markup.quote.txt2tags'
   }
 
   # Comment line (must be the last rule)
   {
-    match: '^%.*$\\n?'
+    match: '^%.*$'
     name: 'comment.txt2tags'
   }
 ]
