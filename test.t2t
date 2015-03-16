@@ -1,0 +1,84 @@
+
+% This is a test file for the txt2tags syntax highlight
+
+%!target: html
+%!encoding(html): utf-8
+%!style(html): style.css
+%!options(html): --toc --toc-level 3
+%!includeconf(html): foo.t2t
+%!include(html): foo.t2t
+%!include(html): ""foo.txt""
+%!include(html): ''foo.html''
+%!include(html): ``foo.js``
+%!preproc(html): "pattern" "replacement"
+%!postproc(html): "pattern" "replacement"
+
+---------------------------------------------------
+
+===================================================
+
+%%toc
+
+= Title 1 =
+== Title 2 ==
+=== Title 3 ===
+==== Title 4 ====
+===== Title 5 =====
+
+= Title 1 =[anchor]
+== Title 2 ==[anchor]
+=== Title 3 ===[anchor]
+==== Title 4 ====[anchor]
+===== Title 5 =====[anchor]
+
++ Numbered title 1 +
+++ Numbered title 2 ++
++++ Numbered title 3 +++
+++++ Numbered title 4 ++++
++++++ Numbered title 5 +++++
+
++ Numbered title 1 +[anchor]
+++ Numbered title 2 ++[anchor]
++++ Numbered title 3 +++[anchor]
+++++ Numbered title 4 ++++[anchor]
++++++ Numbered title 5 +++++[anchor]
+
+Paragraph with **bold**, //italic//, __underline__, --striked--, ``code``.
+
+Paragraph with macros: %%date, %%mtime, %%infile, %%outfile.
+
+Paragraph with url http://example.com and email foo@example.com.
+
+- list
+- list
+-
+
++ list
++ list
++
+
+[link label http://example.com]
+
+[image.png]
+
+	blockquote
+
+```
+code block
+```
+
+"""
+raw text, no **marks** //here//.
+"""
+
+'''
+<p><b>tagged</b> text</p>
+'''
+
+|| heading 1 | heading 2 | heading 3 |
+ | left      |   center  |     right |
+
+%%%
+block
+comment
+%%%
