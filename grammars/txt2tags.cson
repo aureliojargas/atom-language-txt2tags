@@ -122,21 +122,37 @@ patterns: [
 
   # Lists
   {
-    match: '^ *\\+ (?=[^ ])'
-    name: 'markup.list.numbered.txt2tags'
+    match: '^ *(\\+) (?=[^ ])'
+    captures:
+      '1':
+        name: 'variable.ordered.list.txt2tags'
   }
   {
-    match: '^ *- (?=[^ ])'
-    name: 'markup.list.unnumbered.txt2tags'
+    match: '^ *(\\+)\\s*$'
+    captures:
+      '1':
+        name: 'variable.ordered.list.txt2tags'
   }
   {
-    match: '^ *: (?=.)'
-    name: 'markup.list.unnumbered.txt2tags'
+    match: '^ *(-) (?=[^ ])'
+    captures:
+      '1':
+        name: 'variable.unordered.list.txt2tags'
   }
   {
-    match: '^( *)([-+:])\\s*$'
-    name: 'markup.list.txt2tags'
+    match: '^ *(:) (?=.)'
+    captures:
+      '1':
+        name: 'variable.unordered.list.txt2tags'
   }
+  {
+    match: '^ *([:-])\\s*$'
+    captures:
+      '1':
+        name: 'variable.unordered.list.txt2tags'
+  }
+
+  # Code (block and inline)
   {
     begin: '^```\\s*$'
     end: '^```\\s*$\\n?'
