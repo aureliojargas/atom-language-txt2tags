@@ -19,7 +19,7 @@ patterns: [
   # Horizontal line
   {
     match: '^\\s*[_=-]{20,}\\s*$\\n?'
-    name: 'string.unquoted.txt2tags'
+    name: 'comment.hr.txt2tags'
   }
 
   # Inline: __underline__, **bold**
@@ -37,23 +37,23 @@ patterns: [
   #   == foo ==[anchor]
   {
     match: '^\\s*={1}[^=](|.*[^=])={1}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.1.txt2tags'
+    name: 'markup.heading.heading-1.txt2tags'
   }
   {
     match: '^\\s*={2}[^=](|.*[^=])={2}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.2.txt2tags'
+    name: 'markup.heading.heading-2.txt2tags'
   }
   {
     match: '^\\s*={3}[^=](|.*[^=])={3}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.3.txt2tags'
+    name: 'markup.heading.heading-3.txt2tags'
   }
   {
     match: '^\\s*={4}[^=](|.*[^=])={4}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.4.txt2tags'
+    name: 'markup.heading.heading-4.txt2tags'
   }
   {
     match: '^\\s*={5}[^=](|.*[^=])={5}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.5.txt2tags'
+    name: 'markup.heading.heading-5.txt2tags'
   }
 
   # Numbered headings:
@@ -61,23 +61,23 @@ patterns: [
   #   ++ foo ++[anchor]
   {
     match: '^\\s*\\+{1}[^+](|.*[^+])\\+{1}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.1.txt2tags'
+    name: 'markup.heading.heading-1.txt2tags'
   }
   {
     match: '^\\s*\\+{2}[^+](|.*[^+])\\+{2}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.2.txt2tags'
+    name: 'markup.heading.heading-2.txt2tags'
   }
   {
     match: '^\\s*\\+{3}[^+](|.*[^+])\\+{3}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.3.txt2tags'
+    name: 'markup.heading.heading-3.txt2tags'
   }
   {
     match: '^\\s*\\+{4}[^+](|.*[^+])\\+{4}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.4.txt2tags'
+    name: 'markup.heading.heading-4.txt2tags'
   }
   {
     match: '^\\s*\\+{5}[^+](|.*[^+])\\+{5}(\\[[\\w-]*\\])?\\s*$\\n?'
-    name: 'markup.heading.5.txt2tags'
+    name: 'markup.heading.heading-5.txt2tags'
   }
 
   # Inline: //italic//, --strike--
@@ -87,37 +87,37 @@ patterns: [
   }
   {
     match: '--([^\\s](|.*?[^\\s])-*)--'
-    name: 'invalid.deprecated.strike.txt2tags'
+    name: 'markup.strike.invalid.deprecated.txt2tags'
   }
 
   # Raw (inline and block)
   {
     match: '""([^\\s](|.*?[^\\s])"*)""'
-    name: 'string.quoted.other.raw.inline.txt2tags'
+    name: 'string.quoted.raw.inline.txt2tags'
   }
   {
     match: '^""" (?=.).*$\\n?'
-    name: 'string.quoted.other.raw.line.txt2tags'
+    name: 'string.quoted.raw.block.txt2tags'
   }
   {
     begin: '^"""\\s*$'
     end: '^"""\\s*$\\n?'
-    name: 'string.quoted.other.raw.block.txt2tags'
+    name: 'string.quoted.raw.block.txt2tags'
   }
 
   # Tagged (inline and block)
   {
     match: "''([^\\s](|.*?[^\\s])'*)''"
-    name: 'string.quoted.other.tagged.inline.txt2tags'
+    name: 'string.quoted.tagged.inline.txt2tags'
   }
   {
     match: "^''' (?=.).*$\\n?"
-    name: 'string.quoted.other.tagged.line.txt2tags'
+    name: 'string.quoted.tagged.block.txt2tags'
   }
   {
     begin: "^'''\\s*$"
     end: "^'''\\s*$\\n?"
-    name: 'string.quoted.other.tagged.block.txt2tags'
+    name: 'string.quoted.tagged.block.txt2tags'
   }
 
   # Lists
@@ -140,15 +140,15 @@ patterns: [
   {
     begin: '^```\\s*$'
     end: '^```\\s*$\\n?'
-    name: 'markup.raw.verb.block.txt2tags'
+    name: 'markup.raw.code.block.txt2tags'
   }
   {
     match: '^``` (?=.).*$\\n?'
-    name: 'markup.raw.verb.line.txt2tags'
+    name: 'markup.raw.code.block.txt2tags'
   }
   {
     match: '``([^\\s](|.*?[^\\s])`*)``'
-    name: 'markup.raw.verb.inline.txt2tags'
+    name: 'markup.raw.code.inline.txt2tags'
   }
 
   # Misc
@@ -180,13 +180,13 @@ patterns: [
   #   foo@example.com?subject=Hello
   {
     match: '(?i)\\b[A-Za-z0-9_.-]+@([A-Za-z0-9_-]+\\.)+[A-Za-z]{2,4}\\b(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?'
-    name: 'meta.tag.email.txt2tags'
+    name: 'markup.underline.link.email.txt2tags'
   }
 
   # URL (protocol?, www?, domain, params?, anchor?)
   {
     match: '(?i)\\b((https?|ftp|news|telnet|gopher|wais)://([A-Za-z0-9_.-]+(:[^ @]*)?@)?|(www[23]?|ftp)\\.)[A-Za-z0-9%._/~:,=$@&+-]+\\b/*(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?(#[A-Za-z0-9%._-]*)?'
-    name: 'meta.tag.url.txt2tags'
+    name: 'markup.underline.link.http.hyperlink'
   }
 
   # Link:
@@ -194,7 +194,7 @@ patterns: [
   #   [[image.png] url]
   {
     match: '(?i)\\[(\\[[\\w_,.+%$#@!?+~/-]+\\.(png|jpe?g|gif|eps|bmp)\\]|[^]]+) (((https?|ftp|news|telnet|gopher|wais)://([A-Za-z0-9_.-]+(:[^ @]*)?@)?|(www[23]?|ftp)\\.)[A-Za-z0-9%._/~:,=$@&+-]+\\b/*(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?(#[A-Za-z0-9%._-]*)?|[A-Za-z0-9_.-]+@([A-Za-z0-9_-]+\\.)+[A-Za-z]{2,4}\\b(\\?[A-Za-z0-9/%&=+;.,$@*_-]+)?|[A-Za-z0-9%._/~:,=$@&+-]+|[A-Za-z0-9%._/~:,=$@&+-]*(#[A-Za-z0-9%._-]*))\\]'
-    name: 'meta.tag.link.txt2tags'
+    name: 'markup.underline.link.http.hyperlink'
   }
 
   # Blockquote
@@ -206,6 +206,6 @@ patterns: [
   # Comment line (must be the last rule)
   {
     match: '^%.*$\\n?'
-    name: 'comment.line.txt2tags'
+    name: 'comment.txt2tags'
   }
 ]
