@@ -3,7 +3,7 @@
 # https://github.com/asciidoctor/atom-language-asciidoc/blob/master/grammars/asciidoc.cson
 
 name: 'Txt2tags'
-scopeName: 'source.txt2tags'
+scopeName: 'source.gfm source.txt2tags'
 fileTypes: [
   't2t'
 ]
